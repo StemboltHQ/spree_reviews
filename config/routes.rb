@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.append do
+Spree::Core::Engine.routes.draw do
   namespace :admin do
     resources :feedback_reviews
     resources :reviews do
@@ -10,7 +10,7 @@ Spree::Core::Engine.routes.append do
     resource :review_settings
   end
 
-  resources :products do
+  namespace :products do
     resources :reviews do
       collection do
         get :terms
