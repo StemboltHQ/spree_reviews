@@ -1,8 +1,8 @@
 class Spree::FeedbackReviewsController < Spree::StoreController
   helper Spree::BaseHelper
 
-  before_filter :sanitize_rating, only: [:create]
-  before_filter :load_review, only: [:create]
+  before_action :sanitize_rating, only: [:create]
+  before_action :load_review, only: [:create]
 
   def create
 
